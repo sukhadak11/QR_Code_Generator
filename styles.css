@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+    font-family: 'Inter', sans-serif;
+    animation: rainbowBackground 15s ease infinite; /* Adding animation to the background color */
+}
+
+/* Updated background with gradient */
+body {
+    background-color: rgb(229, 229, 231); /* Dark background color */
+    animation: rainbowBackground 15s ease infinite; /* Set an initial color (red in this case) */
+}
+
+@keyframes rainbowBackground {
+    0% {
+        background-color: rgb(255, 0, 0); /* Red */
+    }
+    16.666% {
+        background-color: rgb(255, 127, 0); /* Orange */
+    }
+    33.333% {
+        background-color: rgb(158, 158, 2); /* Yellow */
+    }
+    50% {
+        background-color: rgb(6, 133, 6); /* Green */
+    }
+    66.666% {
+        background-color: rgb(0, 0, 255); /* Blue */
+    }
+    83.333% {
+        background-color: rgb(75, 0, 130); /* Indigo */
+    }
+    100% {
+        background-color: rgb(148, 0, 211); /* Violet */
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #333;
+    cursor: pointer; /* Add pointer cursor to indicate interactivity */
+    transition: transform 0.3s ease, color 0.3s ease; /* Add transition for smooth effect */
+}
+
+/* Hover Effect */
+h1:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+    color: antiquewhite; /* Change color on hover */
+}
+@keyframes rainbowText {
+    0% {
+        filter: hue-rotate(0deg); /* Start color rotation at 0 degrees */
+    }
+    100% {
+        filter: hue-rotate(360deg); /* Full color rotation (360 degrees) */
+    }
+}
+
+/* Apply Animation */
+h1::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    mix-blend-mode: overlay;
+    z-index: -1;
+    animation: rainbowText 5s linear infinite; /* Apply the rainbow color animation */
+}
+.maindiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+    gap: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    color: white; /* Text color */
+}
+
+textarea,
+select,
+#btn {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: calc(100% - 2rem); /* Adjusting width considering padding */
+    border: none;
+    margin-bottom: 1rem; /* Adding space between elements */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    color: white;
+}
+#btn {
+    padding: 1rem;
+    background-color: rgb(4, 115, 89);
+    border: none;
+    border-radius: 0.5rem;
+    width: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Adding transition for box-shadow */
+
+    /* Other existing styles */
+}
+
+#btn:hover {
+    background-color: rgba(4, 115, 89, 0.8);
+    cursor: pointer;
+    animation: pulse 1s infinite; /* Apply pulse animation on hover */
+    box-shadow: 0 0 10px rgba(4, 115, 89, 0.8); /* Change box-shadow on hover */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+textarea:focus,
+select:focus,
+#btn:focus {
+    outline: none;
+}
+
+#btn {
+    background-color: rgb(4, 115, 89);
+    transition: background-color 0.3s ease;
+}
+
+#btn:hover {
+    background-color: rgba(68, 212, 68, 0.8);
+    cursor: pointer;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+li {
+    width: 3rem;
+    height: 3rem;
+}
+
+.imgs {
+    width: 3rem;
+    height: 3rem;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.imgs:hover {
+    background-color: rgb(29, 41, 109);
+    border-radius: 10px;
+    cursor: pointer;
+}
